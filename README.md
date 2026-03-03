@@ -1,50 +1,48 @@
-# Welcome to your Expo app 👋
+# Privacy Glass Lite
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A software-based implementation of Samsung's Privacy Glass feature. No special hardware needed — just your phone's accelerometer.
 
-## Get started
+## What is this?
 
-1. Install dependencies
+Samsung has this cool privacy screen feature built into some of their devices at the hardware level. I wanted something similar but without needing Samsung hardware. So I built this — it uses the accelerometer to detect viewing angle and blacks out sensitive content when someone tries to peek at your screen from the side.
 
-   ```bash
-   npm install
-   ```
+The idea is simple: if you're looking at your phone straight on, everything is visible. Tilt it (or if someone is looking from an angle), the content fades to black. There's a configurable "cone" angle that defines the safe viewing zone.
 
-2. Start the app
+## Tested on
 
-   ```bash
-   npx expo start
-   ```
+I tested this on my Nothing Phone 1 and honestly it's working above my expectations. The overlay is smooth, no visible lag, and the cone detection feels pretty accurate.
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Tilt-based privacy overlay using accelerometer data
+- Configurable viewing cone angle (default ±30°)
+- Smooth animated transitions with exponential moving average
+- HUD widget to visualize tilt angles in real-time
+- Toggle privacy on/off
+- Demo screen with a mock iOS lock screen notification
+- Auto-detects device manufacturer and model name
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tech
 
-## Get a fresh project
+- React Native + Expo
+- expo-sensors (Accelerometer)
+- expo-device
+- expo-router (file-based routing)
+- TypeScript
 
-When you're ready, run:
+## Getting started
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then open it on your phone via Expo Go or a dev build.
 
-## Learn more
+## Note
 
-To learn more about developing your project with Expo, look at the following resources:
+I took help of AI while building this — for structuring the code, breaking things into modules, writing the math logic for the cone model, etc. But the concept, testing, and tweaking was all manual.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Play with it
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Try tilting your phone around, toggle the HUD to see the tilt sensor visualizer, switch privacy on/off. The demo screen simulates an iOS notification with an OTP — good way to see the effect in action.
