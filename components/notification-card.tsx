@@ -18,7 +18,7 @@ export function NotificationCard() {
 
       <View style={styles.divider} />
 
-      <Text style={styles.sender}>Rahul</Text>
+      <Text style={styles.sender}>Johny</Text>
       <Text style={styles.message}>
         Hey! Your OTP for login is <Text style={styles.highlight}>847291</Text>.
         Do not share with anyone.
