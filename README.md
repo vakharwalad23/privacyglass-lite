@@ -6,6 +6,8 @@
 
 A software-based implementation of Samsung's Privacy Glass feature. No special hardware needed — just your phone's accelerometer.
 
+> There's still plenty of room for improvement - this is just a first attempt.
+
 ## What is this?
 
 Samsung has this cool privacy screen feature built into some of their devices at the hardware level. I wanted something similar but without needing Samsung hardware. So I built this — it uses the accelerometer to detect viewing angle and blacks out sensitive content when someone tries to peek at your screen from the side.
