@@ -1,5 +1,9 @@
 # Privacy Glass Lite
 
+<div align="center">
+  <img src="assets/demo.gif" alt="Privacy Glass Demo" width="250" />
+</div>
+
 A software-based implementation of Samsung's Privacy Glass feature. No special hardware needed — just your phone's accelerometer.
 
 ## What is this?
